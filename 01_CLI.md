@@ -50,3 +50,33 @@ $ git commit -m "first commit"
 $ git log
 ```
 
+
+
+``` shell
+$ git checkout (commit log 의 앞 5자리)
+```
+
+``` shell
+$ git checkout master
+```
+
+
+
+``` shell
+$ git remote add origin https://github.com/yonghyunJay/TIL.git
+```
+
+origin : 저장소의 첫번째 별명 (자동)
+
+위 동작 확인
+
+``` shell
+$ git remote -v
+```
+
+``` shell
+$ git push origin master
+```
+
+and 로그인
+

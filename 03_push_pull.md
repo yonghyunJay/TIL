@@ -50,3 +50,39 @@ $ git pull origin master
 
 
 
+### 4. push pull 2인 연습 - 끝말잇기
+
+#### 1. `README.md` 생성 및 push
+
+``` shell
+$ git init
+
+(README.md 추가)
+
+$ git add README.md
+
+$ git commit -m "Add README.md"
+
+$ git remote add origin http://github.com/yonghyunjay/wordchain.git
+
+$ git push origin master
+
+```
+
+
+
+#### 2. 팀원 권한 부여
+
+팀원이 해당 내용 clone 받고 수정 후 push하면 실패 -> 권한 부여 필요
+
+1. 해당 repo. 의 setting > collaborators 설정에서 초대장 발급
+2. 팀원이 초대 수락
+
+
+
+#### 3. 업데이트 내용 pull
+
+``` shell
+$ git pull origin master
+```
+

@@ -1,6 +1,6 @@
 ## git push pull
 
-> (학습 참고1) [@devzunky]([https://velog.io/@devzunky/wecode-TIL-6%EC%9D%BC%EC%B0%A8-Git-Basic-2-5xk1dcgfob](https://velog.io/@devzunky/wecode-TIL-6일차-Git-Basic-2-5xk1dcgfob))
+> (학습 참고1) [devzunky](https://velog.io/@devzunky/wecode-TIL-6일차-Git-Basic-2-5xk1dcgfob)
 >
 > (학습 참고2) [duzum](https://duzun.me/tips/git)
 

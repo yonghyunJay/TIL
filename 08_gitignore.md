@@ -4,7 +4,7 @@
 
 
 
-![image-20191219130901793](../TIL/08_gitignore.assets/image-20191219130901793.png)
+![image-20191219130901793](08_gitignore.assets/image-20191219130901793.png)
 
 위 결과)
 

@@ -18,7 +18,7 @@ $ pip install beautifulsoup4
 
 #### 1. KOSPI 정보 가져오기
 
-![image-20191219104004624](../TIL/07_python_example.assets/image-20191219104004624.png)
+![image-20191219104004624](07_python_example.assets/image-20191219104004624.png)
 
 ``` python
 import requests
@@ -41,7 +41,7 @@ print(kospi.text)
 
 #### 2. 환율 정보 가져오기
 
-![image-20191219105125077](../TIL/07_python_example.assets/image-20191219105125077.png)
+![image-20191219105125077](07_python_example.assets/image-20191219105125077.png)
 
 ``` python
 import requests
@@ -61,7 +61,7 @@ print(exchange.text)
 
 #### 3.  실시간 검색어 가져오기
 
-![image-20191219114811123](../TIL/07_python_example.assets/image-20191219114811123.png)
+![image-20191219114811123](07_python_example.assets/image-20191219114811123.png)
 
 ``` python
 import requests

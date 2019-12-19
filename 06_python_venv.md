@@ -44,7 +44,7 @@ $ rm -rf venv/
 
 
 
-![image-20191219093609980](../TIL/06_python_venv.assets/image-20191219093609980.png)
+![image-20191219093609980](06_python_venv.assets/image-20191219093609980.png)
 
 
 

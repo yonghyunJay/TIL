@@ -58,7 +58,7 @@ if __name__ == "__main__":
 
 
 
-![image-20191219132541541](../TIL/09_flask.assets/image-20191219132541541.png)
+![image-20191219132541541](09_flask.assets/image-20191219132541541.png)
 
 
 
@@ -88,7 +88,7 @@ def hi():
 </body>
 ```
 
-![image-20191219202818497](../TIL/09_flask.assets/image-20191219202818497.png)
+![image-20191219202818497](09_flask.assets/image-20191219202818497.png)
 
 
 
@@ -107,7 +107,7 @@ def greeting(name):
 </body>
 ```
 
-![image-20191219202947362](../TIL/09_flask.assets/image-20191219202947362.png)
+![image-20191219202947362](09_flask.assets/image-20191219202947362.png)
 
 
 
@@ -128,7 +128,7 @@ def cube(num):
 </body>
 ```
 
-![image-20191219203132386](../TIL/09_flask.assets/image-20191219203132386.png)
+![image-20191219203132386](09_flask.assets/image-20191219203132386.png)
 
 
 
@@ -156,7 +156,7 @@ def dinner():
 </body>
 ```
 
-![image-20191219203225459](../TIL/09_flask.assets/image-20191219203225459.png)
+![image-20191219203225459](09_flask.assets/image-20191219203225459.png)
 
 
 
@@ -186,7 +186,7 @@ def movies():
 </body>
 ```
 
-![image-20191219203322087](../TIL/09_flask.assets/image-20191219203322087.png)
+![image-20191219203322087](09_flask.assets/image-20191219203322087.png)
 
 
 
@@ -231,9 +231,9 @@ def pong():
 >
 > 
 
-![image-20191219203721015](../TIL/09_flask.assets/image-20191219203721015.png)
+![image-20191219203721015](09_flask.assets/image-20191219203721015.png)
 
-![image-20191219203729468](../TIL/09_flask.assets/image-20191219203729468.png)
+![image-20191219203729468](09_flask.assets/image-20191219203729468.png)
 
 
 
@@ -277,13 +277,13 @@ def google():
 > </body>
 > ```
 
-![image-20191219203947148](../TIL/09_flask.assets/image-20191219203947148.png)
+![image-20191219203947148](09_flask.assets/image-20191219203947148.png)
 
-![image-20191219203955071](../TIL/09_flask.assets/image-20191219203955071.png)
+![image-20191219203955071](09_flask.assets/image-20191219203955071.png)
 
-![image-20191219204016404](../TIL/09_flask.assets/image-20191219204016404.png)
+![image-20191219204016404](09_flask.assets/image-20191219204016404.png)
 
-![image-20191219204021972](../TIL/09_flask.assets/image-20191219204021972.png)
+![image-20191219204021972](09_flask.assets/image-20191219204021972.png)
 
 
 
@@ -335,7 +335,7 @@ def opgg():
 > </body>
 > ```
 
-![image-20191219204600554](../TIL/09_flask.assets/image-20191219204600554.png)
+![image-20191219204600554](09_flask.assets/image-20191219204600554.png)
 
-![image-20191219204608352](../TIL/09_flask.assets/image-20191219204608352.png)
+![image-20191219204608352](09_flask.assets/image-20191219204608352.png)
 

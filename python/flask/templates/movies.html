@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+    {# jinja 주석입니다. #}
+    {% for movie in html_movies %}
+        {% if movie == '조커' %}
+            <li>{{movie}} || 재밌음</li>
+        {% elif movie == '겨울왕국2' %}
+            <li>{{movie}} || 올라프 귀염 </li>
+        {% else %}
+            <li>{{movie}}</li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+</body>
+</html>

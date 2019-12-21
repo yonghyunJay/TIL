@@ -34,7 +34,7 @@ from > id 확인 후 따로 저장
 
 
 
-### 3. sendMessage 실습1
+### 3. sendMessage 실습
 
 html 에서 입력박은 메시지를 텔레그램 봇으로 보내기
 
@@ -114,7 +114,7 @@ if __name__ == "__main__":
 >
 > gitignore.io 에서 venv, Flask, Python, Windows, VisualStudioCode 입력 후 생성버튼을 누르면 텍스트 파일이 화면에 출력
 >
-> <img src="C:\Users\YH\TIL\10_telegrambot.assets\image-20191220111748670.png" alt="image-20191220111748670" style="zoom:50%;" />
+> <img src="10_telegrambot.assets\image-20191220111748670.png" alt="image-20191220111748670" style="zoom:50%;" />
 >
 > 텍스트를 복사 후 .gitignore 파일 생성 후 붙여넣기
 >
@@ -122,3 +122,110 @@ if __name__ == "__main__":
 
 
 
+### 4. webhook 실습
+
+>  ngrok 설치
+
+https://ngrok.com/
+
+download ngrok
+
+> 실행
+
+cmd 창을 열고
+
+```shell
+> ngrok.exe http 5000
+```
+
+<img src="10_telegrambot.assets\image-20191220132225212.png" alt="image-20191220132225212" style="zoom:80%;" />
+
+Forwarding https://f9acff4a.ngrok.io <= 요거 사용
+
+
+
+#### 텔레그램 setWebhook API 사용
+
+> webhook.py 작성
+
+```python
+from decouple import config
+import requests
+
+token = config("TELEGRAM_BOT_TOKEN")
+url = "https://api.telegram.org/bot"
+ngrok_url = "https://f9acff4a.ngrok.io"
+
+data = requests.get(f'{url}{token}/setWebhook?url={ngrok_url}/{token}')
+print(data)
+```
+
+> webhook.py 실행
+
+```shell
+$ python webhook.py
+<Response [200]>
+```
+
+200 (OK) 응답 오면 완료
+
+
+
+### 5. 로또번호 보내기
+
+> app.py 내용에 추가
+
+```python
+@app.route('/{token}', methods=["POST"])
+def telegram():
+    if text == "로또":
+        numbers = range(1, 46)
+        ret_text = sorted(random.sample(numbers, 6))
+    else :
+        ret_text = "'로또' 만 일력 가능합니다."
+
+    requests.get(f'{url}{token}/sendMessage?chat_id={t_chat_id}&text={ret_text}')
+
+	return "ok", 200
+```
+
+
+
+### 6. pythonanywhere
+
+> webhook을 사용하여 로컬 작업하다가 외부에서도 사용할 수 있도록 pythonanywhere 사용해 봅니다.
+>
+> https://www.pythonanywhere.com/
+
+가입 \> web 탭 \> add \> flask \> 3.7
+
+Files 탭 \> mysite 폴더
+
+작업중인 app.py 붙여넣기
+
+web 탭 \> reload
+
+console 탭 \> bash \> $ pip3 install python-decouple --user
+
+files 탭 \> .env 생성 \> 작업중인 내용 붙여넣기
+
+>  webhook.py 수정 및 재실행
+
+```pyuthon
+paw_url = "https://yongnimm.pythonanywhere.com"
+```
+
+```shell
+$ python webhook.py 
+<Response [200]>
+```
+
+
+
+### 7. 추후 따라해보기
+
+https://steemit.com/kr/@sifnax/python-5-telegram-api
+
+https://bourbonkk.tistory.com/33
+
+http://henryquant.blogspot.com/2019/03/r_13.html

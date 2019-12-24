@@ -20,6 +20,8 @@
 
 
 
+
+
 ### 쿠키삭제 (session 만료)
 
 1. 개발자 모드 Application > Cookies

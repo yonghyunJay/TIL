@@ -88,3 +88,7 @@ public class ControllerAspect {
 
 ![image-20191224153557126](15_spring_aop.assets/image-20191224153557126.png)
 
+
+
+위 로그 안나오면 application.properties 에 logging level을 확인 해 보시길..
+

@@ -189,6 +189,8 @@ public String http(HttpServletRequest request) {
 
 ### 3. HTML Template – Thymeleaf
 
+참고 https://www.thymeleaf.org/doc/tutorials/3.0/thymeleafspring.html
+
 - 스프링 부트에서 권장하는 HTML Template
 
 - HTML5 문법을 사용하는 HTML 태그 및 속성 기반의 Template Engine
@@ -220,6 +222,8 @@ public class Welcome {
 	}
 }
 ```
+
+> welcome.html
 
 ```html
 [[${key1}]]
@@ -431,7 +435,7 @@ public String pagination(Model model, @RequestParam(defaultValue = "1") int page
 
 
 
-#### e. Link Url Expression / @{ … }
+#### e-1. Link Url Expression / @{ … }
 
 ```java
 @GetMapping("linkUrl")
@@ -444,6 +448,8 @@ public String linkUrl(Model model, @RequestParam(defaultValue = "1") int page) {
     return "linkUrl";
 }
 ```
+
+> linkUrl.html
 
 ```html
 <!DOCTYPE html>
@@ -461,3 +467,43 @@ public String linkUrl(Model model, @RequestParam(defaultValue = "1") int page) {
 ```
 
 ![image-20191223193150372](12_spring_request.assets/image-20191223193150372.png)
+
+
+
+#### e-2. Link Url Expression / @{ … }
+
+```java
+@GetMapping("linkUrl")
+public String linkUrl(
+    @RequestParam(defaultValue = "1") int now_page,
+    Model model) {
+    int start = (now_page - 1) / 10 * 10 + 1;
+    int end = start + 9;
+    model.addAttribute("start", start);
+    model.addAttribute("end", end);
+    model.addAttribute("now_page", now_page);
+    return "linkUrl";
+}
+```
+
+> linkUrl.html
+
+```html
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<th:block th:each="page : ${#numbers.sequence(start, end)}">
+		<span th:if="${now_page == page}" th:text="${page}"></span>
+		<a href="#" th:unless="${now_page == page}">[[${page}]]</a>
+	</th:block>
+	
+</body>
+</html>
+```
+
+![image-20191224111349142](12_spring_request.assets/image-20191224111349142.png)
+

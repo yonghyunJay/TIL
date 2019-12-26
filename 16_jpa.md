@@ -174,3 +174,60 @@ public class JpaController {
 ##### b. spring 끄고 > h2.bat 실행 > Product 선택 > Run Selected 
 
 ![image-20191224174315557](16_jpa.assets/image-20191224174315557.png)
+
+
+
+#### 9. @Autowired
+
+IOC & DI (https://jhleed.tistory.com/61)
+
+Spring 구동 시 자체 관리 할 수 있게 되는 @들
+
+@Repository @Service @Controller @Component
+
+
+
+#### 10. 사용자 정의 메소드
+
+##### findByName 만들기
+
+메소드 이름은 규칙만 지키면 다양하게 만들 수 있음
+
+예) findByNameAndPrice
+
+
+
+> ProductRepository.java
+
+```java
+package com.yonghyun.basic.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.yonghyun.basic.model.Product;
+
+@Repository
+public interface ProductRepository extends JpaRepository<Product, Long> {
+	public Product findByName(String name);
+}
+```
+
+> JpaController.java
+
+```java
+@GetMapping("/jpa/product2")
+public Product product2(String name) {
+    Product pro = productRepository.findByName(name);
+    return pro;
+}
+```
+
+> http://localhost:8080/jpa/product?name=banana
+
+![image-20191226102011160](16_jpa.assets/image-20191226102011160.png)
+
+
+
+
+

@@ -227,7 +227,3 @@ public Product product2(String name) {
 
 ![image-20191226102011160](16_jpa.assets/image-20191226102011160.png)
 
-
-
-
-

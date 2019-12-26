@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8"> 
+    <script>
+        var xmlHttp;
+
+        function createXMLHttpRequest() {
+            if(window.ActiveXObject) {
+                xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+            } else if(window.XMLHttpRequest) {
+                xmlHttp = new XMLHttpRequest();
+            }
+        }
+
+        function send() {
+            createXMLHttpRequest();
+            var url = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&type=video&key=AIzaSyD1nEHRmwOngver-et89R1-2nBS115CveY&q=펭수";
+            xmlHttp.onreadystatechange = callback; 
+
+            xmlHttp.open("GET", url, true);
+            
+            xmlHttp.send(null);
+        }
+
+        function callback() {
+            
+            if(xmlHttp.readyState == 4) {
+
+                if(xmlHttp.status == 200) {
+                    temp = xmlHttp.responseText;
+                    // alert(temp);
+                    obj = JSON.parse(temp);
+                    var items = obj.items;
+
+                    var code = "";
+
+                    for(var i = 0 ; i < items.length ; i++) {
+                        var item = items[i];
+                        var snippet = item.snippet;
+                        var title = snippet.title;
+                        
+                        var thumbnails = snippet.thumbnails;
+                        var default2 = thumbnails.default;
+                        var url = default2.url;
+
+                        var videoId = item.id.videoId; // 속성 이어 붙여서 사용 : 무조건 최하위 인자가 있을 경우에만 사용
+
+
+
+                        code += '<div>';
+                        code += '<img src="'+ url +'">';
+                        code += '<a href="http://www.youtube.com/watch?v=' + videoId +'">'+ title +'</a>';
+                        code += '</div>';
+                        console.log(title, url);
+                    }
+
+                    document.querySelector("#list").innerHTML = code;
+                }
+            }
+        }    
+    </script>
+</head>
+
+<!-- <body onload="send()"> // 바로 send() 출력 -->
+<body>
+    <input type="button" value="요청" onclick="send()">
+    <div id="list">
+    </div>
+</body>
+
+</html>

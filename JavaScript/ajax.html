@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8"> 
+    <script>
+        var xmlHttp;
+
+        function createXMLHttpRequest() {
+            if(window.ActiveXObject) {
+                xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+            } else if(window.XMLHttpRequest) {
+                xmlHttp = new XMLHttpRequest();
+            }
+        }
+
+        function send() {
+            createXMLHttpRequest();
+            var url = "http://ggoreb.com/ajax/json2.jsp";
+            xmlHttp.onreadystatechange = callback; 
+
+            xmlHttp.open("GET", url, true);
+            
+            xmlHttp.send(null);
+        }
+
+        function callback() {
+            
+            if(xmlHttp.readyState == 4) {
+
+                if(xmlHttp.status == 200) {
+                    temp = xmlHttp.responseText;
+                    // alert(temp);
+                    obj = JSON.parse(temp);
+                    alert(obj.id + ' // ' + obj.pw);
+                }
+            }
+        }    
+    </script>
+</head>
+
+<body>
+    <input type="button" value="요청" onclick="send()">
+</body>
+
+</html>

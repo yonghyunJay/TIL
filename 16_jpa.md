@@ -44,6 +44,21 @@ https://h2database.com/html/main.html
 
 (Embedded) 옵션일 경우 spring 서버와 동시에 사용 안됨
 
+> Embedded -> server 로 구동하려면..
+>
+> ![image-20191226104235050](16_jpa.assets/image-20191226104235050.png)
+>
+> application.properties 수정
+>
+> JDBC URL을 application.properties에 수정
+>
+> ```java
+> # datasource
+> spring.datasource.url=jdbc:h2:tcp://localhost/~/test
+> ```
+
+
+
 
 
 연결누르면 C:\\Users\\[PC계정이름] 경로에 아래 파일 생성 확인

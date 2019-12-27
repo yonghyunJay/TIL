@@ -60,7 +60,7 @@ create - 프로젝트 실행 될때마다 DB 초기화
 </html>
 ```
 
-![image-20191227094350374](20_jpa_.board.assets/image-20191227094350374.png)
+![image-20191227094350374](20_jpa_board.assets/image-20191227094350374.png)
 
 
 
@@ -149,7 +149,7 @@ public class BoardController {
 
 지금 상태에서 글 쓰면
 
-![image-20191227094451984](20_jpa_.board.assets/image-20191227094451984.png)
+![image-20191227094451984](20_jpa_board.assets/image-20191227094451984.png)
 
 NullPointerException
 
@@ -163,7 +163,7 @@ code -> String userId = user.getEmail();
 
 로그인하고 다시 글쓰면 H2에 추가된 DB 확인 가능
 
-![image-20191227094707655](20_jpa_.board.assets/image-20191227094707655.png)
+![image-20191227094707655](20_jpa_board.assets/image-20191227094707655.png)
 
 > Index 자동 증가 이상을 수정하기위해 application.properties 에 옵션 추가
 >
@@ -175,9 +175,9 @@ code -> String userId = user.getEmail();
 >
 > 다시 signup and 글쓰기 하고 DB의 Index 확인
 >
-> ![image-20191227101302584](20_jpa_.board.assets/image-20191227101302584.png)
+> ![image-20191227101302584](20_jpa_board.assets/image-20191227101302584.png)
 >
-> ![image-20191227101253789](20_jpa_.board.assets/image-20191227101253789.png)
+> ![image-20191227101253789](20_jpa_board.assets/image-20191227101253789.png)
 
 
 
@@ -241,7 +241,7 @@ public String board(Model model) {
 ...
 ```
 
-![image-20191227101806023](20_jpa_.board.assets/image-20191227101806023.png)
+![image-20191227101806023](20_jpa_board.assets/image-20191227101806023.png)
 
 > 게시물 내림차순 정렬
 >
@@ -253,7 +253,7 @@ public String board(Model model) {
 >
 > 
 >
-> ![image-20191227102306942](20_jpa_.board.assets/image-20191227102306942.png)
+> ![image-20191227102306942](20_jpa_board.assets/image-20191227102306942.png)
 >
 > ![image-20191227102400085](20_jpa_.board.assets/image-20191227102400085.png)
 
@@ -337,9 +337,9 @@ public String boardView(Model model, @PathVariable("id") long id) {
 
 
 
-![image-20191227103806889](20_jpa_.board.assets/image-20191227103806889.png)
+![image-20191227103806889](20_jpa_board.assets/image-20191227103806889.png)
 
-![image-20191227103800183](20_jpa_.board.assets/image-20191227103800183.png)
+![image-20191227103800183](20_jpa_board.assets/image-20191227103800183.png)
 
 
 
@@ -409,7 +409,7 @@ public String boardUpdatePost(@ModelAttribute Board board, @PathVariable("id") l
 }
 ```
 
-![image-20191227104913931](20_jpa_.board.assets/image-20191227104913931.png)
+![image-20191227104913931](20_jpa_board.assets/image-20191227104913931.png)
 
 #### 3. controller/BoardController.java에 삭제 기능 추가
 
@@ -421,7 +421,7 @@ public String boardDelete(@PathVariable("id") long id) {
 }
 ```
 
-![image-20191227110609928](20_jpa_.board.assets/image-20191227110609928.png)
+![image-20191227110609928](20_jpa_board.assets/image-20191227110609928.png)
 
-![image-20191227110621791](20_jpa_.board.assets/image-20191227110621791.png)
+![image-20191227110621791](20_jpa_board.assets/image-20191227110621791.png)
 

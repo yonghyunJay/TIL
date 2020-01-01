@@ -66,7 +66,7 @@ public interface PointRepository extends JpaRepository<Point, Long> {
 	<footer th:replace="common/footer"> </footer>
 
 	<script
-		src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=38d34c29c097c5f5c8c02416cb4aefff"></script>
+		src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=[API_KEY]"></script>
 	<script>
 		var container = document.getElementById('map');
 		var options = {

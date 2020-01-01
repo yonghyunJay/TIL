@@ -19,7 +19,7 @@ for tr in table.find_all('tr'):
         if td.find('a'):
             point = td.find('a').text
             temperature = tds[5].text
-            humidity = tds[9].text
+            humidity = tds[10].text
             data.append([point, temperature, humidity])
 
 with open('weather.csv', 'w', encoding='utf-8', newline='\n') as file:
